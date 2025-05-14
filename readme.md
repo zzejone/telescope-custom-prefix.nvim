@@ -6,13 +6,16 @@ neovim当前行添加前缀
 `
     {
         "zzejone/telescope-custom-prefix.nvim",
-        name = "telescope-custom-prefix",
         dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
-        config = function()
-            require("telescope-custom-prefix").setup {
-                prefixes = { "TODO", "NOTE", "FIXME", "REVIEW", "OPTIMIZE" },
-                keymap = "<leader>tp",
-            }
-        end,
+        opts = {
+            prefixes = { "TODO", "NOTE", "FIXME", "HACK", "WARN" },
+            keymap = "<leader>tp",
+            telescope = {
+                layout_config = {
+                  width = 0.5,
+                  height = 0.4,
+                },
+            },
+        },
     },
 `
